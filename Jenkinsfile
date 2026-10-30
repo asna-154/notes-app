@@ -33,10 +33,9 @@ pipeline {
                 // GitHub "private" commit emails cannot receive mail, so fall back to the instructor
                 def recipient = (committer == '' || committer.endsWith('noreply.github.com')) ? 'qasimalik@gmail.com' : committer
                 emailext(
-                    to: 'asnahammad11@gmail.com',
-                    cc: 'asnahammad54@gmail.com',
+                    to: "asnahammad54@gmail.com, asnahammad11@gmail.com", 
                     subject: "Build #${env.BUILD_NUMBER}: ${currentBuild.currentResult}",
-                    body: "Build Status: ${currentBuild.currentResult}\nJob: ${env.JOB_NAME}\nBuild number: ${env.BUILD_NUMBER}\nCommit author: ${committer}\nBuild URL: ${env.BUILD_URL}"
+                    body: "Build Status: ${currentBuild.currentResult}\nJob: ${env.JOB_NAME}\nBuild number: ${env.BUILD_NUMBER}\n\nCheck console output at ${env.BUILD_URL}"
                 )
             }
         }
