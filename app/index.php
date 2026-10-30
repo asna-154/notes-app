@@ -66,7 +66,7 @@ function h($text) {
     </style>
 </head>
 <body>
-    <h1>Notes App</h1>
+    <h1>Notes App v2</h1>
     <p class="tag">Deployment: <strong><?= h($label) ?></strong></p>
 
     <?php if ($error): ?>
