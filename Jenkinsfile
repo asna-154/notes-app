@@ -34,7 +34,7 @@ pipeline {
                 def recipient = (committer == '' || committer.endsWith('noreply.github.com')) ? 'qasimalik@gmail.com' : committer
                 emailext(
                     to: recipient,
-                    cc: 'YOUR_GMAIL@gmail.com',
+                    cc: 'asnahammad54@gmail.com',
                     subject: "Build #${env.BUILD_NUMBER}: ${currentBuild.currentResult}",
                     body: "Build Status: ${currentBuild.currentResult}\nJob: ${env.JOB_NAME}\nBuild number: ${env.BUILD_NUMBER}\nCommit author: ${committer}\nBuild URL: ${env.BUILD_URL}"
                 )
